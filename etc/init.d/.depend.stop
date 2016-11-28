@@ -1,0 +1,12 @@
+TARGETS = exim4 mdadm dropbear urandom sendsigs rsyslog umountnfs.sh hwclock.sh networking umountfs umountroot mdadm-raid mdadm-waitidle halt reboot
+sendsigs: exim4 mdadm dropbear
+rsyslog: sendsigs exim4 mdadm dropbear
+umountnfs.sh: sendsigs rsyslog exim4 dropbear
+hwclock.sh: rsyslog
+networking: umountnfs.sh exim4
+umountfs: urandom hwclock.sh umountnfs.sh networking exim4 mdadm dropbear
+umountroot: umountfs
+mdadm-raid: umountfs mdadm
+mdadm-waitidle: umountroot
+halt: umountroot mdadm-waitidle
+reboot: umountroot mdadm-waitidle

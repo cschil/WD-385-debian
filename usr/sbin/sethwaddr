@@ -1,0 +1,8 @@
+#!/bin/sh
+#read mac from file to var
+
+read hwaddr < /etc/mac_addr
+
+#set mac 
+
+/sbin/ip link set dev eth0 address $hwaddr

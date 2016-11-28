@@ -1,0 +1,55 @@
+
+Log started: 2016-11-06  17:20:16
+Log ended: 2016-11-06  17:20:33
+
+Log started: 2016-11-06  17:25:55
+Log ended: 2016-11-06  17:26:24
+
+Log started: 2016-11-06  17:36:58
+Log ended: 2016-11-06  17:36:59
+
+Log started: 2016-11-06  18:11:07
+Log ended: 2016-11-06  18:12:24
+
+Log started: 2016-11-24  07:10:04
+Log ended: 2016-11-24  07:10:34
+
+Log started: 2016-11-24  07:12:49
+Log ended: 2016-11-24  07:13:29
+
+Log started: 2016-11-26  15:08:10
+Log ended: 2016-11-26  15:08:11
+
+Log started: 2016-11-26  15:59:01
+Log ended: 2016-11-26  15:59:02
+
+Log started: 2016-11-26  16:02:25
+(Lese Datenbank ... (Lese Datenbank ... 5%(Lese Datenbank ... 10%(Lese Datenbank ... 15%(Lese Datenbank ... 20%(Lese Datenbank ... 25%(Lese Datenbank ... 30%(Lese Datenbank ... 35%(Lese Datenbank ... 40%(Lese Datenbank ... 45%(Lese Datenbank ... 50%(Lese Datenbank ... 55%(Lese Datenbank ... 60%(Lese Datenbank ... 65%(Lese Datenbank ... 70%(Lese Datenbank ... 75%(Lese Datenbank ... 80%(Lese Datenbank ... 85%(Lese Datenbank ... 90%(Lese Datenbank ... 95%(Lese Datenbank ... 100%(Lese Datenbank ... 17683 Dateien und Verzeichnisse sind derzeit installiert.)
+Entfernen von dropbear (2014.65-1) ...
+Running in chroot, ignoring request.
+Running in chroot, ignoring request.
+Trigger für man-db (2.7.0.2-5) werden verarbeitet ...
+Log ended: 2016-11-26  16:02:28
+
+Log started: 2016-11-26  16:02:36
+Vormals nicht ausgewähltes Paket dropbear wird gewählt.
+(Lese Datenbank ... (Lese Datenbank ... 5%(Lese Datenbank ... 10%(Lese Datenbank ... 15%(Lese Datenbank ... 20%(Lese Datenbank ... 25%(Lese Datenbank ... 30%(Lese Datenbank ... 35%(Lese Datenbank ... 40%(Lese Datenbank ... 45%(Lese Datenbank ... 50%(Lese Datenbank ... 55%(Lese Datenbank ... 60%(Lese Datenbank ... 65%(Lese Datenbank ... 70%(Lese Datenbank ... 75%(Lese Datenbank ... 80%(Lese Datenbank ... 85%(Lese Datenbank ... 90%(Lese Datenbank ... 95%(Lese Datenbank ... 100%(Lese Datenbank ... 17659 Dateien und Verzeichnisse sind derzeit installiert.)
+Vorbereitung zum Entpacken von .../dropbear_2014.65-1_armhf.deb ...
+Entpacken von dropbear (2014.65-1) ...
+Trigger für man-db (2.7.0.2-5) werden verarbeitet ...
+Trigger für systemd (215-17+deb8u5) werden verarbeitet ...
+Running in chroot, ignoring request.
+dropbear (2014.65-1) wird eingerichtet ...
+Converting existing OpenSSH RSA host key to Dropbear format.
+Key is a ssh-rsa key
+Wrote key to '/etc/dropbear/dropbear_rsa_host_key'
+Converting existing OpenSSH RSA host key to Dropbear format.
+Key is a ssh-dss key
+Wrote key to '/etc/dropbear/dropbear_dss_host_key'
+OpenSSH appears to be installed.  Setting /etc/default/dropbear so that
+Dropbear will not start by default.  Edit this file to change this behaviour.
+
+Running in chroot, ignoring request.
+Running in chroot, ignoring request.
+Running in chroot, ignoring request.
+Log ended: 2016-11-26  16:02:39

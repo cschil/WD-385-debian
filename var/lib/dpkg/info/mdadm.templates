@@ -1,0 +1,642 @@
+
+Template: mdadm/initrdstart
+Type: string
+Default: all
+Description: MD arrays needed for the root file system:
+ ${msg}
+ .
+ Please enter 'all', 'none', or a space-separated list of devices such as
+ 'md0 md1' or 'md/1 md/d0' (the leading '/dev/' can be omitted).
+Description-ca.UTF-8: Les matrius MD necessaris per al sistema de fitxers arrel:
+ ${msg}
+ .
+ Escriviu «all» (tots), «none» (cap) o una llista separada per espais dels dispositius com  «md0 md1» o «md/1 md/d0» (podeu ometre el «/dev/» inicial).
+Description-cs.UTF-8: MD pole vyžadovaná pro kořenový souborový systém:
+ ${msg}
+ .
+ Zadejte prosím mezerami oddělený seznam zařízení, případně „all“ nebo „none“. Počáteční „/dev/“ můžete vynechat a zadat jen např. „md0 md1“ nebo „md/1 md/d0“.
+Description-da.UTF-8: MD arrays krævet for rodfilsystemet:
+ ${msg}
+ .
+ Indtast venligst »all«, »none« eller en mellemrumsadskilt liste af enheder såsom »md0 md1« eller »md/1 md/d0« (det foranstillede »/dev/« kan udelades).
+Description-de.UTF-8: Für das Wurzeldateisystem benötigte MD folgende Verbünde:
+ ${msg}
+ .
+ Bitte geben Sie »all«, »none« oder eine leerzeichenseparierte Geräteliste wie zum Beispiel »md0 md1« oder »md/1 md/d0« ein (das führende »/dev« kann weggelassen werden).
+Description-es.UTF-8: Arrays MD necesarios para el sistema de ficheros raíz:
+ ${msg}
+ .
+ Introduzca «all» (todos),  «none» (ninguno) o una lista de dispositivos separados por espacios como por ejemplo puede sólo introducir «md0 md1» o «md/1 md/d0» (no tiene que preceder los nombres de dispositivos con «/dev»).
+Description-eu.UTF-8: Erro fitxategi-sistemarentzat beharrezko MD array-ak:
+ ${msg}
+ .
+ Mesedez idatzi 'denak', 'batez', edo zuriunez bereziriko gailuen zerrenda, adibidez 'md0 md1' edo 'md/1 md/d0' (hasierako '/dev/' baztertu daiteke).
+Description-fi.UTF-8: Juuritiedostojärjestelmän tarvitsemat MD-pakat:
+ ${msg}
+ .
+ Syötä ”all” (kaikki), ”none” (ei mitään) tai välilyönnein eroteltu lista laitteista, esimerkiksi ”md0 md1” tai ”md/1 md/d0” (edeltävä /dev/ voidaan jättää pois).
+Description-fr.UTF-8: Ensembles MD requis par le système de fichiers racine :
+ ${msg}
+ .
+ Veuillez indiquer « all », « none » ou une liste de périphériques, séparés par des espaces, par exemple, « md0 md1 » ou « md/1 md/d0 » (vous pouvez omettre « /dev/ »).
+Description-gl.UTF-8: Arrays MD necesarios para o sistema de ficheiros raíz
+ ${msg}
+ .
+ Introduza "all" (todos), "none" (ningún) ou unha lista de dispositivos separados por espazos, tales coma "md0 md1" ou "md/1 md/0" (pódese omitir o "/dev/" do principio).
+Description-it.UTF-8: Array MD necessari per il file system di root:
+ ${msg}
+ .
+ Inserire "all", "none" oppure un elenco dei device separati da uno spazio, per esempio "md0 md1" o "md/1 md/d0" (il "/dev/" iniziale può essere omesso).
+Description-ja.UTF-8: ルートファイルシステムに必要な MD アレイ:
+ ${msg}
+ .
+ 'all' または 'none'、あるいはデバイスのリストを 'md0 md1' や 'md/1 md/d0' のようにスペースで区切って入力してください (前に付く '/dev/' は省略可能です)。
+Description-nl.UTF-8: Voor het basisbestandssysteem benodigde RAID-reeksen:
+ ${msg}
+ .
+ Geef in 'all' (alle), 'none' (geen) of één of meerdere apparaatbestanden (gescheiden door spaties), bijvoorbeeld "md0 md1" of "md/1 md/d0" (de prefix '/dev/' kan dus worden weggelaten).
+Description-pt.UTF-8: Grupos MD necessários para o sistema de ficheiros raiz:
+ ${msg}
+ .
+ Por favor, introduza 'all', 'none', ou uma lista de dispositivos separados por espaços, tais como 'md0 md1' ou 'md/1 md/d0' (o '/dev/' inicial pode ser omitido).
+Description-ru.UTF-8: MD-массивы, необходимые для корневой файловой системы:
+ ${msg}
+ .
+ Введите список устройств через пробел, слово 'all' или 'none'. Вы можете не указывать начальную часть пути типа '/dev/', а просто вводить имена устройств, например 'md0 md1' или 'md/1 md/d0'.
+Description-sk.UTF-8: Polia MD, potrebné pre koreň súborového systému:
+ ${msg}
+ .
+ Prosím, zadajte „all”, „none” alebo medzerou oddelený zoznam zariadení, napr. „md0 md1” alebo „md/1 md/d0” (počiatočné „/dev/” môže byť vynechané).
+Description-sv.UTF-8: MD-kedjor som behövs för rotfilsystemet:
+ ${msg}
+ .
+ Ange "all", "none" eller en blankstegsseparerad lista på enheter, såsom "md0 md1" eller "md/1 md/0" (det inledande "/dev" kan uteslutas).
+Description-vi.UTF-8: Các mảng MD cần thiết cho hệ thống tập tin gốc:
+ ${msg}
+ .
+ Hãy nhập « all » (tất cả), « none » (không có), hoặc một danh sách các thiết bị định giới bằng dấu cách như « md0 md1 » hoặc « md/1 md/d0 » (có thể bỏ sót phần « /dev/ » đi trước).
+
+Template: mdadm/initrdstart_msg_intro
+Type: text
+Description: for internal use - only the long description is needed.
+ If the system's root file system is located on an MD array (RAID), it needs to be
+ started early during the boot sequence. If it is located on
+ a logical volume (LVM), which is on MD, all constituent arrays need to be
+ started.
+ .
+ If you know exactly which arrays are needed to bring up the root file system,
+ and you want to postpone starting all other arrays to a later point in the
+ boot sequence, enter the arrays to start here. Alternatively, enter 'all' to
+ simply start all available arrays.
+ .
+ If you do not need or want to start any arrays for the root file system, leave
+ the answer blank (or enter 'none'). This may be the case if you are using
+ kernel autostart or do not need any arrays to boot.
+Description-ca.UTF-8: per a ús intern, només és necessària la descripció llarga. 
+ Si el sistema de fitxers arrel del sistema està en un conjunt MD (RAID), cal que s'iniciï al principi de la seqüència d'arrencada. Si està en un volum lògic (LVM), que està definit sobre un MD, cal iniciar totes les matrius que el constitueixen.
+ .
+ Si sabeu exactament quines matrius són necessàries per arrencar el sistema de fitxers arrel, i vol ajornar l'arrencada de la resta de conjunts a un punt posterior de la seqüència d'arrencada, Introduïu aquí els conjunts que voleu arrencar. També podeu seleccionar «all» per, simplement, arrencar tots els disponibles.
+ .
+ Si no necessita o vol arrencar qualsevol matriu per al sistema de fitxers arrel, deixau en blanc la resposta (o escriviu «none»). Pot ésser el seu cas si fa servir l'auto-arrencada del nucli o no necessiteu cap matriu en l'arrencada.
+Description-cs.UTF-8: pro vnitřní použití - pouze kvůli zobrazení dlouhého popisu.
+ Pokud je kořenový souborový systém umístěn na MD (RAID) svazku, musí být tento spuštěn během zavádění systému co nejdříve. Pokud se kořenový souborový systém nachází na logickém svazku LVM, který je vytvořen nad MD polem, musí se spustit všechna související pole.
+ .
+ Jestliže přesně víte, která pole jsou potřeba pro připojení kořenového souborového systému a zároveň chcete pozdržet spuštění ostatních polí na pozdější dobu, zadejte zde prosím pole, která se mají spustit. Chcete-li spustit všechna dostupná pole, můžete zadat „all“.
+ .
+ Nepotřebujete-li nebo nechcete-li spouštět pole pro kořenový souborový systém, ponechte odpověď prázdnou, případně zadejte „none“. To může nastat třeba v případě, že používáte automatický start přímo v jádře, nebo pokud k zavedení systému žádná pole nepotřebujete.
+Description-da.UTF-8: for intern brug - kun den lange beskrivelse er krævet.
+ Hvis systemets rodfilsystem er placeret på en MD-array (RAID), skal det startes tidligt under opstartssekvensen. Hvis den er placeret på en logisk diskenhed (LVM), som er på MD, skal alle indgående arrays startes.
+ .
+ Hvis du ved præcis hvilke arrays som er krævet, for at få rodfilsystemet op, og du ønsker at udsætte start af alle andre arrays til et senere tidspunkt i opstartssekvensen, så indtast her de arrays som skal startes. Alternativt kan du indtaste »all« for at starte alle tilgængelige arrays.
+ .
+ Hvis du ikke har brug for eller ønsker at starte nogen arrays for rodfilsystemet, så efterlad svaret tomt (eller indtast »none«). Dette kan være tilfældet, hvis du bruger automatisk start af kernen eller ikke skal bruge arrays til at starte op med.
+Description-de.UTF-8: für internen Gebrauch - es wird nur die ausführliche Beschreibung benötigt.
+ Wenn das Wurzeldateisystem Ihres Systems auf einem MD-Verbund (RAID) liegt, muss es frühzeitig während des Bootvorgangs gestartet werden. Wenn sich Ihr Wurzeldateisystem auf einem logischen Laufwerk (LVM) befindet, das sich wiederum auf einem MD Verbund befindet, müssen alle zugehörigen Verbünde gestartet werden.
+ .
+ Wenn Sie genau wissen, welche Verbünde benötigt werden, um das Wurzeldateisystem zu starten, und Sie den Start der anderen Verbünde auf einen späteren Zeitpunkt in der Bootreihenfolge verschieben wollen, geben Sie die zu startenden Verbünde hier ein. Alternativ geben Sie »all« ein, um alle verfügbaren Verbünde zu starten.
+ .
+ Falls Sie keine RAID-Verbünde für das Wurzeldateisystem benötigen oder starten wollen, lassen Sie die Antwort leer (oder geben »none« ein). Dies könnte der Fall sein, wenn Sie entweder die Autostartfunktion des Kernels verwenden oder keine Verbünde zum Booten benötigen.
+Description-es.UTF-8: para uso interno. Sólo se utiliza la descripción larga.
+ Si el sistema de ficheros raíz de su sistema está en un array MD (RAID) tiene que inicializarse antes durante de la secuencia de arranque. Si está en un volumen lógico (LVM), que está definido sobre un MD, todos los arrays que lo forman tienen que haberse inicializado.
+ .
+ Introduzca los arrays a iniciar aquí, si sabe con exactitud cuáles son necesarios para arrancar el sistema de ficheros raíz y quiere posponer el arranque de todos los demás arrays a un punto posterior de la secuencia de arranque. También puede introducir «all» (todos) para, sencillamente, iniciar todos los arrays disponibles.
+ .
+ Puede dejar la respuesta en blanco (o introducir «none») si no necesita o desea arrancar los arrays para el sistema de ficheros raíz. Este puede ser su caso si está utilizando el autoarranque del núcleo o no necesita ningún array para el arranque.
+Description-eu.UTF-8: barne erabilerako - deskribapen luzea bakarrik behar da.
+ Sistemaren erro fitxategi-sistema MD array (RAID) batetan kokaturik badago, berau abio sekuentziaren hasieran abiarazi behar da. MD batetan kokaturiko bolumen logiko (LVM) batetan badago osatzen duten array guztiak abiarazi behar dira.
+ .
+ Erro fitxategi-sistema erabiltzeko beharrezkoak diren arrayak zehazki jakin eta beste array-en abiaraztea abioaren beranduagoko puntu batetara atzeratu nahi baduzu, idatzi abiarazi beharreko array-ak hemen. Bestela idatzi 'denak' array erabilgarri guztiak abiarazteko.
+ .
+ Ez baduzu erro fitxategi sistemarako array-rik abiarazi behar, hutsik utzi ezazu (edo 'batez' idatzi). Hau abioan array-rik behar ez duzulako edo kernel auto-abioa erabiltzen duzulako izan daiteke.
+Description-fi.UTF-8: vain sisäiseen käyttöön - vain pitkä kuvaus on tarpeellinen.
+ Jos järjestelmän juuritiedostojärjestelmä sijaitsee MD-levypakassa (RAID), pakka tulee käynnistää aikaisessa vaiheessa käynnistettäessä järjestelmää. Jos se sijaitsee loogisella taltiolla (LVM), joka on MD-pakassa, kaikki taltioon liittyvät pakat tulee käynnistää.
+ .
+ Jos tiedät tarkalleen mitä pakkoja tarvitaan juuritiedostojärjestelmän käynnistämiseen ja haluat viivästyttää muiden pakkojen käynnistystä, syötä käynnistettävät pakat tähän. Vaihtoehtoisesti voit käynnistää kaikki pakat syöttämällä ”all”.
+ .
+ Jos mitään pakkoja ei tarvitse käynnistää juuritiedostojärjestelmän käyttämiseksi, jätä kenttä tyhjäksi (tai syötä ”none”). Tämä voi olla tilanne, jos käytät ytimen autokäynnistystä tai et tarvitse mitään pakkoja käynnistykseen.
+Description-fr.UTF-8: Pour une utilisation interne - seule la description longue est nécessaire
+ Si le système de fichiers racine se trouve sur un ensemble MD (RAID), il doit être lancé au début de la procédure de démarrage. Si le système de fichiers racine se trouve sur un volume logique (« LVM »), qui se trouve aussi sur un volume MD, tous les composants de l'ensemble doivent être démarrés.
+ .
+ Si vous savez exactement quels sont les ensembles RAID nécessaires au démarrage du système de fichiers racine et si vous souhaitez différer le démarrage de tous les autres ensembles, veuillez les indiquer ici. Vous pouvez aussi indiquer « all » pour démarrer tous les ensembles existants.
+ .
+ Si vous n'avez pas besoin ou ne souhaitez pas démarrer d'ensemble RAID pour le système de fichiers racine, veuillez laissez l'entrée vide (ou entrez « none »). Ceci peut être le cas si vous utilisez l'option de démarrage automatique (« autostart ») du noyau ou si vous n'avez besoin d'aucun ensemble pour démarrer.
+Description-gl.UTF-8: para uso interno - só se precisa da descrición longa.
+ Se o sistema de ficheiros raíz do sistema está ubicado nun array MD (RAID), hai que o iniciar no principio da secuencia de inicio. Se está ubicado nun volume lóxico (LVM) que está nun MD, hai que iniciar os arrays constituíntes.
+ .
+ Se sabe exactamente que arrays son necesarios para erguer o sistema de ficheiros raíz, e se quere pospor o inicio dos demáis arrays ata un punto posterior da secuencia de inicio, introduza aquí os arrays a iniciar. Alternativamente, introduza "all" para iniciar tódolos arrays dispoñibles.
+ .
+ Se non quere ou precisa de iniciar ningún array para o sistema de ficheiros raíz, deixe a resposta en branco (ou introduza "none"). Este pode ser o caso se está a empregar o autoinicio do núcleo ou non precisa de ningún array para o inicio.
+Description-it.UTF-8: uso interno - è necessaria solo la descrizione lunga.
+ Se il file system di root è su un array MD (RAID), è necessario attivare tale array all'inizio della sequenza d'avvio. Se è su un volume logico (LVM), il quale è su un MD, è necessario attivare tutti gli array che costituiscono il volume.
+ .
+ Se si conoscono esattamente quali sono gli array da attivare per il file system di root e si vuole rimandare l'attivazione di tutti gli altri array a una fase successiva della sequenza d'avvio, inserire adesso gli array da attivare. In alternativa, inserire "all" per attivare tutti gli array disponibili.
+ .
+ Se non si ha bisogno o non si vuole attivare nessun array per il file system di root, lasciare la risposta in bianco (oppure inserire "none"). Questo potrebbe essere il caso se si utilizza l'attivazione automatica da kernel oppure se non si ha bisogno di alcun array per l'avvio.
+Description-ja.UTF-8: 内部での利用について - でも、長い説明が必要です。
+ あなたのシステムのルートファイルシステムが MD アレイ (RAID) 上に配置されているならば、ブートシーケンスの初期段階で MD アレイを開始する必要があります。ルートファイルシステムが MD のような論理ボリューム (LVM) 上にある場合は、構成しているアレイ全ての開始が必要です。
+ .
+ どのアレイがルートファイルシステムの立ち上げに必要かを正確に知っており、ブートシーケンスの後の時点まで意図しているもの以外全てのアレイ起動を遅らせたい場合、ここで最初に起動するアレイを入力してください。そうでない場合、'all' と入力して単に全ての利用可能なアレイを最初に立ち上げてください。
+ .
+ ルートファイルシステムのために、どのアレイも必要ない、あるいはどのアレイも起動したくは無いという場合は、空白のままに (あるいは 'none' と入力) してください。これは、カーネルで自動的に起動される場合や起動時にはアレイは不要であるという場合です。
+Description-nl.UTF-8: Voor intern gebruik - alleen de lange omschrijving wordt gebruikt.
+ Als het basisbestandssysteem van uw systeem zich op een RAID-volume bevindt, dient dit vroeg in de opstartcyclus geactiveerd te worden. Als het zich op een logisch volume (LVM) op RAID bevindt, dienen alle betrokken reeksen geactiveerd te worden.
+ .
+ Als u precies weet welke reeksen benodigd zijn voor het basisbestandssysteem en u het activeren van alle overige reeksen wilt uitstellen tot later in de opstartprocedure, geef dan hier de te activeren reeksen in. Anders kunt u 'all' ingeven om alle beschikbare reeksen te activeren.
+ .
+ Als u geen reeksen hoeft of wenst te activeren voor het basisbestandssysteem, laat dan het antwoord leeg (of geef 'none' in). Dit kan het geval zijn als u "kernel autostart" gebruikt of geen reeksen nodig heeft om uw systeem op te starten.
+Description-pt.UTF-8: para uso interno - apenas a descrição longa é necessária
+ Se o sistema de ficheiros de raiz do sistema estiver num grupo MD (RAID), necessita de ser iniciado mais cedo na sequência de arranque. Se o seu sistema de ficheiros de raiz estiver num volume lógico (LVM) que está no MD, todos os grupos constituintes necessitam de ser iniciados.
+ .
+ Se souber exactamente que grupos são necessários para iniciar o sistema de ficheiros raiz, e quiser adiar o inicio de todos os outros grupos para mais tarde no processo de arranque, introduza os grupos aqui. Alternativamente, introduza 'all' para iniciar todos os grupos disponíveis.
+ .
+ Se não necessita ou deseja iniciar grupos para o sistema de ficheiros raiz, deixe a resposta em branco (ou introduza 'none'). Isto vale no caso de usar o auto-arranque do kernel ou não necessitar de grupos para o arranque do sistema.
+Description-ru.UTF-8: для внутреннего пользования - нужно использовать только длинное описание.
+ Если в системе корневая файловая система расположена на MD-массиве (RAID), он должен быть запущен в самом начале процесса загрузки. Если корневая файловая система расположена на логическом томе (LVM), который расположен на MD, то должны быть запущены все составляющие массивы.
+ .
+ Если вы точно знаете, какие массивы требуются для получения работоспособной корневой файловой системы и хотите отложить запуск остальных массивов на более поздний момент в процессе загрузки, то введите их здесь. Иначе, введите слово 'all', чтобы просто запустить все доступные массивы.
+ .
+ Если вам это не нужно, или вы хотите запускать все массивы для корневой файловой системы, оставьте это поле пустым (или введите слово 'none'). Этот вариант подходит, если вы используете автоматический запуск из ядра или если для загрузки массивы ненужны.
+Description-sk.UTF-8: na interné použitie – potrebný je len dlhý popis.
+ Ak je koreň súborového systému umiestnený na poli MD (RAID), musí byť spustený počas zavádzania systému. Ak je koreň umiestnený na logickom zväzku (LVM), ktorý je na MD, musia byť spustené všetky súvisiace polia.
+ .
+ Ak viete presne, ktoré polia sú potrebné na pripojenie koreňa súborového systému a chcete odložiť štart všetkých ostatných polí na neskorší okamih zavádzania, zadajte tu polia, ktoré majú byť spustené. Alebo zadajte „all”, čím budú jednoducho spustené všetky dostupné polia.
+ .
+ Ak pre koreň súborového systému nepotrebujete alebo nechcete spúšťať žiadne polia, nechajte odpoveď prázdnu (alebo zadajte „none”). Tento prípad môže nastať, ak používate automatický štart polí priamo v jadre alebo nepotrebujete pri zavádzaní žiadne polia.
+Description-sv.UTF-8: för intern användning - endast den långa beskrivningen behövs.
+ Om ditt system har sitt rotfilsystem på en MD-kedja (RAID) behöver den startas upp tidigt under uppstartssekvensen. Om ditt rotfilsystem finns på en logisk volym (LVM), vilket är på MD, behöver alla bestående kedjor startas.
+ .
+ Om du vet exakt vilka kedjor som behövs för att ta upp rotfilsystemet, och du vill skjuta upp uppstarten för alla andra kedjor till en senare tidspunkt i uppstartssekvensen, ange vilka kedjor som ska starta här. Alternativt, ange "all" för att helt enkelt starta alla tillgängliga kedjor.
+ .
+ Om du inte behöver eller vill starta några kedjor för rotfilsystemet, lämna svaret blankt (eller ange "none"). Detta kan vara fallet om du använder kärnans automatstart eller inte behöver några kedjor för att starta upp.
+Description-vi.UTF-8: để sử dụng nội bộ — chỉ cần thiết mô tả dài.
+ Nếu hệ thống tập tin gốc của hệ thống nằm trên một mảng MD (RAID) thì cần phải khởi chạy nó sớm trong tiến trình khởi động. Nếu nó nằm trên một khối tin hợp lý (LVM) mà lần lượt nằm trên một MD thì cần phải khởi chạy tất cả các mảng thành phần.
+ .
+ Nếu bạn biết chính xác những mảng nào cần thiết để kích hoạt hệ thống tập tin gốc, và bạn muốn hoãn việc khởi chạy các mảng khác tới một điểm sau trong dãy khởi động, hãy nhập vào đây các mảng cần khởi chạy. Hoặc nhập « all » (tất cả) để khởi chạy đơn giản tất cả các mảng sẵn sàng. 
+ .
+ Nếu bạn không cần hoặc muốn khởi chạy mảng nào cho hệ thống tập tin gốc, hãy bỏ trống câu trả lời này (hoặc nhập « none » [không có]). Trường hợp này có thể xảy ra nếu bạn sử dụng khả năng tự động khởi động hạt nhân (kernel autostart), hoặc không cần mảng nào để khởi động máy tính.
+
+Template: mdadm/initrdstart_msg_errexist
+Type: text
+Description:
+ An error occurred: device node does not exist
+Description-ca.UTF-8:
+ S'ha produït un error: el node de dispositiu no existeix.
+Description-cs.UTF-8:
+ Vyskytla se chyba: uzel zařízení neexistuje
+Description-da.UTF-8:
+ Der opstod en fejl: Enhedsknude findes ikke
+Description-de.UTF-8:
+ Ein Fehler ist aufgetreten: Geräteknoten existiert nicht
+Description-es.UTF-8:
+ Se produjo un error: el nodo de dispositivo no existe
+Description-eu.UTF-8:
+ Errore bat gertatu da: gailu nodoa ez dago
+Description-fi.UTF-8:
+ Tapahtui virhe: laitetiedostoa ei ole olemassa
+Description-fr.UTF-8:
+ Erreur : périphérique inconnu
+Description-gl.UTF-8:
+ Houbo un erro: o nodo do dispositivo non existe
+Description-it.UTF-8:
+ Errore: il nodo del device non esiste
+Description-ja.UTF-8:
+ エラーが発生しました: デバイスノードが存在しません
+Description-nl.UTF-8:
+ Er is een fout opgetreden: apparaatbestand bestaat niet
+Description-pt.UTF-8:
+ Ocorreu um erro: o nó do dispositivo não existe
+Description-pt_BR.UTF-8:
+ Um erro ocorreu: o dispositivo ("device node") não existe
+Description-ru.UTF-8:
+ Произошла ошибка: нода устройства не существует
+Description-sk.UTF-8:
+ Nastala chyba: uzol zariadenia neexistuje
+Description-sv.UTF-8:
+ Ett fel inträffade: enhetsnoden finns inte
+Description-vi.UTF-8:
+ Gặp lỗi: nút thiết bị không tồn tại
+
+Template: mdadm/initrdstart_msg_errblock
+Type: text
+Description:
+ An error occurred: not a block device
+Description-ca.UTF-8:
+ S'ha produït un error: no és un dispositiu de blocs.
+Description-cs.UTF-8:
+ Vyskytla se chyba: není blokovým zařízením
+Description-da.UTF-8:
+ Der opstod en fejl: Ikke en blokenhed
+Description-de.UTF-8:
+ Ein Fehler ist aufgetreten: kein Blockgerät
+Description-es.UTF-8:
+ Se produjo un error: no es un dispositivo de bloques
+Description-eu.UTF-8:
+ Errore bat gertatu da: ez da bloke gailu bat
+Description-fi.UTF-8:
+ Tapahtui virhe: ei lohkolaite
+Description-fr.UTF-8:
+ Erreur : ce n'est pas un périphérique en mode bloc
+Description-gl.UTF-8:
+ Houbo un erro: non é un dispositivo de bloques
+Description-it.UTF-8:
+ Errore: non è un device a blocchi
+Description-ja.UTF-8:
+ エラーが発生しました: ブロックデバイスではありません
+Description-nl.UTF-8:
+ Er is een fout opgetreden: geen blokapparaat
+Description-pt.UTF-8:
+ Ocorreu um erro: não é um dispositivo de bloco
+Description-pt_BR.UTF-8:
+ Um erro ocorreu: não é um dispositivo de blocos
+Description-ru.UTF-8:
+ Произошла ошибка: устройство не является блочным
+Description-sk.UTF-8:
+ Nastala chyba: nie je blokové zariadenie
+Description-sv.UTF-8:
+ Ett fel inträffade: inte en blockenhet
+Description-vi.UTF-8:
+ Gặp lỗi: không phải là một thiết bị khối
+
+Template: mdadm/initrdstart_msg_errmd
+Type: text
+Description:
+ An error occurred: not an MD array
+Description-ca.UTF-8:
+ S'ha produït un error: no és un conjunt («array») MD.
+Description-cs.UTF-8:
+ Vyskytla se chyba: není MD polem
+Description-da.UTF-8:
+ Der opstod en fejl: Ikke en MD array
+Description-de.UTF-8:
+ Ein Fehler ist aufgetreten: kein RAID-Verbund
+Description-es.UTF-8:
+ Se produjo un error: no es un array MD
+Description-eu.UTF-8:
+ Errore bat gertatu da: ez da MD array bat
+Description-fi.UTF-8:
+ Tapahtui virhe: ei MD-pakka
+Description-fr.UTF-8:
+ Erreur : ce n'est pas un ensemble RAID
+Description-gl.UTF-8:
+ Houbo un erro: non é un array MD
+Description-it.UTF-8:
+ Errore: non è un array MD
+Description-ja.UTF-8:
+ エラーが発生しました: MD アレイではありません
+Description-nl.UTF-8:
+ Er is een fout opgetreden: geen RAID reeks
+Description-pt.UTF-8:
+ Ocorreu um erro: não é um grupo MD
+Description-pt_BR.UTF-8:
+ Um erro ocorreu: não é um dispositivo MD
+Description-ru.UTF-8:
+ Произошла ошибка: это не MD-массив
+Description-sk.UTF-8:
+ Nastala chyba: nie je pole MD
+Description-sv.UTF-8:
+ Ett fel inträffade: inte en MD-kedja
+Description-vi.UTF-8:
+ Gặp lỗi: không phải là một mảng MD
+
+Template: mdadm/initrdstart_msg_errconf
+Type: text
+Description:
+ An error occurred: array not listed in mdadm.conf file
+Description-ca.UTF-8:
+ S'ha produït un error: la matriu («array») no apareix llistada en el fitxer de configuració «mdadm.conf».
+Description-cs.UTF-8:
+ Vyskytla se chyba: pole není uvedeno v souboru mdadm.conf
+Description-da.UTF-8:
+ Der opstod en fejl: Array er ikke anført i mdadm.conf-filen
+Description-de.UTF-8:
+ Ein Fehler ist aufgetreten: Verbund nicht in der Datei mdadm.conf aufgeführt
+Description-es.UTF-8:
+ Se produjo un error: el array no está en la lista definida en el archivo mdadm.conf
+Description-eu.UTF-8:
+ Errore bat gertatu da: array-a ez dago mdadm.conf fitxategian zerrendaturik
+Description-fi.UTF-8:
+ Tapahtui virhe: pakkaa ei ole listattu tiedostossa mdadm.conf
+Description-fr.UTF-8:
+ Erreur : ensemble non mentionné dans le fichier mdadm.conf
+Description-gl.UTF-8:
+ Houbo un erro: o array non figura no ficheiro mdadm.conf
+Description-it.UTF-8:
+ Errore: array non elencato nel file mdadm.conf
+Description-ja.UTF-8:
+ エラーが発生しました: mdadm.conf ファイルに記述されていないアレイです
+Description-nl.UTF-8:
+ Er is een fout opgetreden: reeks komt niet voor in bestand mdadm.conf
+Description-pt.UTF-8:
+ Ocorreu um erro: o grupo não está listado no ficheiro mdadm.conf
+Description-pt_BR.UTF-8:
+ Um erro ocorreu: dispositivo não listado no arquivo mdadm.conf
+Description-ru.UTF-8:
+ Произошла ошибка: массив не описан в файле mdadm.conf
+Description-sk.UTF-8:
+ Nastala chyba: pole nie je uvedené v súbore mdadm.conf
+Description-sv.UTF-8:
+ Ett fel inträffade: kedjan är inte listad i filen mdadm.conf
+Description-vi.UTF-8:
+ Gặp lỗi: mảng không được liệt kê trong tập tin cấu hình « mdadm.conf »
+
+Template: mdadm/initrdstart_notinconf
+Type: boolean
+Default: false
+Description: Start arrays not listed in mdadm.conf?
+ The specified array (${array}) is not listed in the configuration
+ file (${config}). Therefore, it cannot be started during boot, unless you
+ correct the configuration file and recreate the initial ramdisk.
+ .
+ This warning is only relevant if you need arrays to be started from the
+ initial ramdisk to be able to boot. If you use kernel autostarting, or do not
+ need any arrays to be started as early as the initial ramdisk is loaded, you
+ can simply continue. Alternatively, choose not to continue and enter 'none'
+ when prompted which arrays to start from the initial ramdisk.
+Description-ca.UTF-8: Voleu arrencar les matrius no llistats en el fitxer «mdadm.conf»?
+ La matriu («array»)  especificada (${array}) no apareix llistada en el fitxer de configuració (${config}). Per tant, no es pot iniciar la matriu durant l'arrencada del sistema, llevat que corregeixi el fitxer de configuració i regenereu el disc RAM inicial.
+ .
+ Aquest avís només és important si necessiteu que les matrius s'arrenquin en el disc RAM inicial per poder arrencar el sistema. Si feu servir l'arrencada automàtica del nucli o no necessiteu que les matrius  estiguin arrencats quan es carregui el disc RAM, podeu continuar. També podeu decidir no continuar i introduir «none» quan se li demani quines matrius   cal iniciar del disc RAM inicial.
+Description-cs.UTF-8: Spustit pole neuvedená v mdadm.conf?
+ Zadané pole (${array}) není uvedeno v konfiguračním souboru ${config} a tím pádem nemůže být spuštěno při zavádění systému. Napravit to můžete opravou konfiguračního souboru a znovuvytvořením počátečního ramdisku.
+ .
+ Toto varování je relevantní pouze pokud k zavedení systému potřebujete, aby se pole spustila z počátečního ramdisku. Používáte-li automatické spouštění přímo v jádře, nebo pokud nepotřebujete pouštět žádná pole ještě z počátečního ramdisku, můžete jednoduše pokračovat. Jinou možností je nepokračovat dále a při dotazu na seznam polí, která se mají spouštět z počátečního ramdisku, zadat 'none'.
+Description-da.UTF-8: Start arrays er ikke anført i mdadm.conf?
+ Den angivne array (${array}) er ikke anført i konfigurationsfilen (${config}). Den kan derfor ikke startes under opstarten, med mindre du retter i konfigurationsfilen og gendanner den oprindleige ramdisk.
+ .
+ Denne advarsel er kun relevant hvis du skal have arrays til at blive startet fra den oprindelige ramdisk for at kunne starte op. Hvis du bruger den automatiske opstart i kernen, eller ikke skal bruge at arrays startes så tidligt som den oprindelige ramdisk indlæses, så kan du bare fortsætte. Alternativt så vælg at fortsætte og indtaste »none« når du bliver spurgt om hvilke arrays, der skal startes fra den oprindelige ramdisk.
+Description-de.UTF-8: Nicht in mdadm.conf aufgeführte Verbünde starten?
+ Der angegebene Verbund (${array}) ist in der Konfigurationsdatei ${config} nicht aufgeführt. Deshalb kann er während des Bootvorgangs nicht gestartet werden, es sei denn, Sie korrigieren die Konfigurationsdatei und erzeugen die initiale Ramdisk neu.
+ .
+ Diese Warnung ist nur von Bedeutung, wenn Sie RAID-Verbünde, die von der initialen Ramdisk gestartet werden, benötigen, um booten zu können. Falls Sie die Autostartfunktion des Kernels verwenden oder kein RAID-Verbund zum frühen Zeitpunkt des Ladens der initialen Ramdisk gestartet werden muss, können Sie einfach fortfahren. Alternativ wählen Sie, nicht fortzufahren und geben »none« ein, wenn Sie gefragt werden, welche RAID-Verbünde von der initialen Ramdisk gestartet werden sollen.
+Description-es.UTF-8: ¿Desea arrancar los arrays no listados en mdadm.conf?
+ El array que ha especificado (${array}) no está listado en el fichero de configuración ${config}. Este array no podrá iniciarse durante el arranque del sistema a no ser que corrija el fichero de configuración y regenere el disco de ram inicial.
+ .
+ Este aviso sólo es relevante si necesita que los arrays se inicien en el disco de RAM inicial para poder arrancar el sistema. Si utiliza el autoarranque del núcleo o no necesita que los arrays estén arrancados tan pronto como se cargue el disco de RAM, puede continuar simplemente. También puede decidir no continuar e introducir «none» cuando se le pregunte qué arrays deberían arrancarse del disco de RAM inicial.
+Description-eu.UTF-8: Abiarazi mdadm.conf fitxategian ez dauden array-ak?
+ Zehazturiko (${array}) array-a ez dago (${config}) konfigurazio fitxategian zerrendaturiko. Horregatik ezin da abioan abiarazi zuk konfigurazio fitxategia konpondu eta abio ramdiskoa bersortu arte.
+ .
+ Abisu hau abiarazi ahal izateko ramdisk.etik array-ak baiaraztea behar baduzu bakarrik da garrantzitsua. Kernel auto-abioa erabiltzen baduzu edo ez baduzu ramdisk-etik hasieran array-rik kargatzea behar aurrera jarraitu dezakezu. Bestela ez jarraitzea hautatu eta 'batez' idatzi hasierako ramdisk-etik kargatu beharreko array-ez galdetzean.
+Description-fi.UTF-8: Käynnistetäänkö pakat, joita ei ole listattu tiedostossa mdadm.conf?
+ Annettua pakkaa (${array}) ei ole listattu asetustiedostossa (${config}). Niinpä sitä ei voida käynnistää käynnistettäessä järjestelmä, ellei asetustiedostoa korjata ja käynnistysmuistilevyä (initrd) luoda uudelleen.
+ .
+ Tämä varoitus on aiheellinen vain, jos järjestelmän käynnistäminen vaatii pakkojen käynnistämistä käynnistysmuistilevyltä. Jos ytimen autokäynnistys on käytössä tai pakkoja ei tarvita siinä vaiheessa, kun käynnistysmuistilevy ladataan, voit jatkaa. Vaihtoehtoisesti voit olla jatkamatta ja syöttää ”none” kysyttäessä käynnistysmuistilevyltä käynnistettäviä pakkoja.
+Description-fr.UTF-8: Faut-il démarrer les ensembles RAID non mentionnés dans mdadm.conf ?
+ L'ensemble (${array}) que vous avez spécifié n'est pas mentionné dans le fichier de configuration ${config}. Il ne sera donc pas démarré à moins que vous corrigiez le fichier de configuration et que vous génériez de nouveau le disque mémoire initial (« ramdisk »).
+ .
+ Cet avertissement n'a de signification que si des ensembles RAID doivent être lancés à partir du disque mémoire initial afin de pouvoir démarrer le système. Si vous utilisez le démarrage automatique par le noyau, ou si vous n'avez pas besoin de lancer d'ensemble RAID depuis le disque mémoire initial, vous pouvez simplement poursuivre. Vous pouvez aussi choisir de ne pas poursuivre et entrer « none » lorsqu'il vous sera demandé le nom des ensembles RAID à démarrer à partir du disque mémoire initial.
+Description-gl.UTF-8: ¿Iniciar os arrays que non figuran en mdadm.conf?
+ O array indicado (${array}) non figura no ficheiro de configuración (${config}). Polo tanto, non se pode arrincar no inicio do sistema, a menos que corrixa o ficheiro de configuración e volva crear o disco RAM inicial.
+ .
+ Este aviso só é relevante se precisa de iniciar arrays desde o disco RAM inicial para poder iniciar o sistema. Se emprega autoinicio do núcleo ou non precisa de iniciar arrays tan pronto como se cargue o disco RAM inicial, pode continuar. De xeito alternativo, escolla non continuar e introduza "none" cando se lle pregunte que arrays quere iniciar do disco RAM inicial.
+Description-it.UTF-8: Avviare gli array non elencati in mdadm.conf?
+ L'array specificato (${array}) non è presente nel file di configurazione (${config}): quindi non può essere attivato durante l'avvio senza correggere il file di configurazione e ricreare il ramdisk iniziale.
+ .
+ Questo avviso è pertinente solo se è necessario attivare gli array dal ramdisk iniziale per permettere l'avvio. Con l'avvio automatico da kernel o se non è necessario attivare gli array così presto come al caricamento del ramdisk iniziale, si può proseguire. In alternativa, scegliere di non continuare e inserire "none" quando viene chiesto quali array attivare dal ramdisk iniziale.
+Description-ja.UTF-8: mdadm.conf に記述されていないアレイを起動しますか?
+ 指定したアレイ (${array}) は設定ファイル (${config}) に記述されていません。そのため、設定ファイルを修正して initrd を再生成しなければブート時に起動できません。
+ .
+ この警告は、ブートできるようにアレイを initrd から起動する必要がある場合だけ関係します。カーネルで自動的にアレイを起動するようにしている場合、あるいは initrd がロードされる程早い段階でどのアレイも起動したくはない場合はそのまま続行できます。他の選択肢としては、起動の続行を中止し、どのアレイを initrd から起動するかを尋ねられた際に 'none' と入力します。
+Description-nl.UTF-8: Reeksen activeren die niet in mdadm.conf voorkomen?
+ De reeks die u heeft opgegeven (${array}) komt niet voor in het configuratiebestand (${config}). Tenzij u het configuratiebestand corrigeert en de initiële ramdisk opnieuw aanmaakt, kan deze reeks tijdens het opstarten van het systeem niet worden geactiveerd.
+ .
+ Deze waarschuwing is alleen relevant als de reeksen geactiveerd moeten worden vanuit een initiële ramdisk om het systeem te kunnen opstarten. Als u "kernel autostart" gebruikt of er geen reeksen zijn die vanuit de initiële ramdisk gestart moeten worden, kunt u gewoon doorgaan. Kies anders nu om niet door te gaan en geef 'none' in bij de vraag welke reeksen vanuit de initiële ramdisk gestart moeten worden.
+Description-pt.UTF-8: Iniciar grupos não listados no mdadm.conf?
+ O grupo especificado (${array}) não está listado no ficheiro de configuração (${config}). Portanto, não pode ser iniciado durante o processo de arranque, a não ser que corrija o ficheiro de configuração e recrie o ramdisk inicial.
+ .
+ Este aviso só é relevante se houver necessidade de iniciar grupos a partir do ramdisk durante o arranque do sistema. Se usar o auto-arranque do kernel, ou não necessitar de iniciar os grupos tão cedo no processo de arranque do sistema, pode simplesmente continuar. Em alternativa, escolha não continuar e introduza 'none' quando perguntado sobre quais grupos iniciar a partir do ramdisk inicial.
+Description-ru.UTF-8: Запустить массивы, неописанные в mdadm.conf?
+ Указанный вами массив (${array}) не описан в конфигурационном файле (${config}). Поэтому он не может быть запущен при старте машины, пока вы не исправите конфигурационный файл и не пересоздадите первоначальный ramdisk.
+ .
+ Данное предупреждение уместно только, если вам требуется запускать массивы из первоначального ramdisk для загрузки машины. Если вы используете автоматический запуск из ядра или вам не нужны массивы для загрузки на этапе загрузки первоначального ramdisk, вы можете просто продолжить. Иначе, выберите не продолжать и введите 'none', когда вам предложат выбрать массивы для запуска из первоначального ramdisk.
+Description-sk.UTF-8: Spustiť polia, ktoré nie sú uvedené v mdadm.conf?
+ Zadané pole (${array}) nie je uvedené v konfiguračnom súbore (${config}), a preto nemôže byť spustené počas zavádzania, až kým neopravíte konfiguračný súbor a nevytvoríte nový počiatočný ramdisk (initrd).
+ .
+ Toto varovanie je dôležité, len ak potrebujete aby boli polia spúšťané z počiatočného ramdisku, aby boli dostupné počas zavádzania. Ak používate automatické spúšťanie polí priamo z jadra, alebo ak nepotrebujte aby boli polia spúšťané tak skoro (z počiatočného ramdisku), môžete prosto pokračovať. Alebo môžete zvoliť nepokračovať a odpovedať „none” na otázku, ktoré polia majú byť spúšťané z počiatočného ramdisku.
+Description-sv.UTF-8: Starta kedjor som inte är listade i mdadm.conf?
+ Kedjan du har angivit (${array}) är inte listad i konfigurationsfilen (${config}). Därför kan den inte startas under systemets uppstart, såvida du inte rättar till konfigurationsfilen och återskapar den initiala ramdisken.
+ .
+ Den här varningen är endast relevant om du behöver kedjor som ska startas från den initiala ramdisken för att kunna starta upp systemet. Om du använder kärnans automatstart, eller inte behöver starta några kedjor så tidigt som när de initiala ramdisken läses in, kan du helt enkelt fortsätta. Alternativt, välj att inte fortsätta och ange "none" när frågan om vilka kedjor som ska startas från den initiala ramdisken ställs.
+Description-vi.UTF-8: Khởi chạy các mảng không được liệt kê trong tập tin cấu hình « mdadm.conf » không?
+ Mảng bạn đã xác định (${array}) không được liệt kê trong tập tin cấu hình ${config}. Vì vậy nó không thể được khởi chạy trong khi khởi động, nếu bạn không sửa tập tin cấu hình và tạo lại đĩa RAM đầu tiên.
+ .
+ Cảnh báo này chỉ là thích hợp nếu bạn cần thiết mảng được khởi chạy từ đĩa RAM đầu tiên, để có thể khởi động được. Nếu bạn sử dụng khả năng tự động khởi chạy hạt nhân (kernel autostart), hoặc không cần mảng nào được khởi chạy một khi nạp đĩa RAM đầu tiên, bạn đơn giản có thể tiếp tục lại. Hoặc chọn không tiếp tục, và nhập « none » (không có) khi được nhắc nhập những mảng nào cần khởi chạy từ đĩa RAM đầu tiên.
+
+Template: mdadm/autocheck
+Type: boolean
+Default: true
+Description: Should mdadm run monthly redundancy checks of the MD arrays?
+ If the kernel supports it (versions greater than 2.6.14), mdadm can periodically check the
+ redundancy of MD arrays (RAIDs). This may be a resource-intensive process,
+ depending on the local setup, but it could help prevent rare cases of data loss.
+ Note that this is a read-only check unless errors are found; if errors are
+ found, mdadm will try to correct them, which may result in write access to
+ the media.
+ .
+ The default, if turned on, is to check on the first Sunday of every
+ month at 01:06.
+Description-ca.UTF-8: Voleu que «mdadm» executi comprovacions de redundància mensuals de les matrius MD?
+ Si el nucli ho accepta (versions superiors a la 2.6.14), «mdadm» pot fer comprovacions periòdiques de la redundància de les matrius MD (RAIDs). Pot ésser que aquest procés consumeixi molts recursos del sistema, depenent de la configuració, però pot ajudar a prevenir casos poc freqüents de pèrdua de dades. Teniu present que aquestes comprovacions es fan en mode lectura llevat que es detectin errors: si hi ha errors, «mdadm» els corregirà i per això, caldrà que tengui accés d'escriptura als mitjans físics. 
+ .
+ El valor predeterminat, si s'activa, es fer la comprovació el primer diumenge de cada mes a les 01:06 am.
+Description-cs.UTF-8: Má mdadm spouštět měsíční kontroly redundance MD polí?
+ Pokud to vaše jádro podporuje (verze větší než 2.6.14), může mdadm pravidelně kontrolovat redundanci MD polí (RAIDů). Podle konfigurace počítače to může být proces velmi náročný na prostředky, ovšem může předejít vzácným případům ztráty dat. Pokud nejsou nalezeny chyby, používá tato kontrola v zásadě jen čtecí operace. Při nalezení chyb se je mdadm pokusí opravit, což může znamenat zápis na médium.
+ .
+ Pokud kontrolu povolíte, bude se dle výchozího nastavení spouštět každou první neděli v měsíci v 01:06 ráno.
+Description-da.UTF-8: Skal mdadm køre månedlig redundanskontrol af MD arrays?
+ Hvis kernen understøtter det (versioner større end 2.6.14), kan mdadm periodisk kontrollere redundansen på MD arrays (RAID'er). Det kan være en ressourcekrævende proces, afhængig af den lokale opsætning, men det kan hjælpe med at forhindre at du i sjældne tilfælde får datatab. Bemærk at dette er en skrivebeskyttet kontrol med mindre at der findes fejl; hvis der registreres fejl vil mdadm forsøge at rette dem, hvilket kan medføre skriveadgang til mediet.
+ .
+ Standarden - hvis aktiveret - er at kontrollere på den første søndag i hver måned klokken 01:06.
+Description-de.UTF-8: Soll mdadm monatlich die Redundanzüberprüfung auf den RAID-Verbünden ausführen?
+ Falls Ihr Kernel es unterstützt (Versionen größer als 2.6.14) kann mdadm regelmäßig die Redundanz Ihrer MD-Verbünde (RAID) überprüfen. Dies kann abhängig von Ihrer Installation ein resourcenintensiver Vorgang sein, der aber helfen kann, seltene Fälle von Datenverlust zu vermeiden. Bitte beachten Sie, dass diese Überprüfung nur lesend erfolgt, solange keine Fehler gefunden werden. Falls Fehler gefunden werden, wird mdadm versuchen, diese zu beheben, was zu schreibendem Zugriff auf das Medium führen kann.
+ .
+ Die Voreinstellung ist, falls eingeschaltet, die Überprüfung am ersten Sonntag jedes Monats um 01:06 Uhr durchzuführen.
+Description-es.UTF-8: ¿Debería mdadm ejecutar comprobaciones de redundancia mensuales de los arrays MD?
+ Mdadm puede comprobar de forma periódica la redundancia de sus arrays MD (RAIDs) si el núcleo lo soporta (si su versión es superior a la 2.6.14). Esto puede ser un proceso que consuma muchos recursos, dependiendo de su configuración, pero podría ayudar a prevenir casos raros de pérdida de datos. Tenga en cuenta que estas comprobaciones se hacen en modo lectura salvo que se detecten errores, en cuyo caso mdadm necesitará corregirlos, lo que significa que será necesario tener acceso de escritura a los medios físicos.
+ .
+ El valor por omisio, si se activa, es comprobar el primer Domingo de cada mes a las 01:06 am.
+Description-eu.UTF-8: Mdadm-ek hilabetero egin behar al du MD array-en erredundantzia egiaztapena?
+ Kernelak onartzen badu (2.6.14 baino bertsio berriagoak), mdadm-ek aldiro MD array-en (RAID-en) erredundantzia aldiro egiazta dezake. Hau errekurtso-behar handiko prozesu bat izan daiteke, konfigurazio lokalaren arabera, baina datu galera kasuak saihesten lagundu dezake. Kontutan izan errorerik aurkitzen ez bada irakurketa-soileko egiaztapen bat dela; errorerik arukituko balitz mdadm konpontzen saiatuko da, honetarako euskarrian idaztea beharrezko izan daitekeelarik.
+ .
+ Lehenespen bezala gaiturik dago, egiaztapena hilabete bakoitzeko lehenengo asteleheneko 01:06-etan egingo da.
+Description-fi.UTF-8: Tulisiko mdadm:n tarkistaa kuukausittain MD-pakkojen eheys?
+ Ohjelma mdadm voi säännöllisesti tarkistaa MD-pakkojen (RAIDien) tietojen monistuksen, jos ydin tukee tätä (versiosta 2.6.14 eteenpäin). Tämä prosessi voi paikallisesta kokoonpanosta riippuen kuluttaa paljon resursseja, mutta saattaa ehkäistä tietojen menetyksiä tietyissä harvinaisissa tapauksissa. Tarkistus vaatii vain tietojen lukemista, jos virheitä ei löyty. Jos virheitä löytyy, mdadm yrittää korjata ne, jolloin levylle saatetaan myös kirjoittaa.
+ .
+ Oletuksena, jos tarkistus on käytössä, se tehdään kuukauden ensimmäisenä sunnuntaina kello 01.06.
+Description-fr.UTF-8: Faut-il vérifier chaque mois la redondance des ensembles RAID ?
+ Si le noyau le gère (à partir de la version 2.6.14), mdadm peut vérifier périodiquement la redondance des ensembles RAID. Cette action peut demander beaucoup de ressources selon la configuration, mais cela aide à prévenir les rares cas de pertes de données. Notez que ce test est réalisé en lecture seule à moins que des erreurs ne soient rencontrées. Si des erreurs sont détectées, mdadm essayera de les corriger, ce qui entraînera des écritures sur le média.
+ .
+ Par défaut, la vérification s'effectuera tous les premiers dimanche du mois à 01 h 06.
+Description-gl.UTF-8: ¿Debería mdadm facer comprobacións mensuais de redundancia dos arrays MD?
+ Se o núcleo ten soporte para iso (en versións superiores á 2.6.14), mdadm pode facer comprobacións periódicas de redundancia dos arrays MD (RAIDs). Este pode ser un proceso intensivo en recursos, dependendo da configuración local, pero pode axudar a evitar algúns casos raros de perdas de datos. Teña en conta que esta é unha comprobación de só lectura a menos que se atopen erros; se se atopan erros, mdadm ha tratar de os arranxar, o que pode producir accesos de escritura aos soportes.
+ .
+ A opción por defecto, se se activa, é facer as comprobacións o primeiro domingo de cada mes ás 01:16.
+Description-it.UTF-8: Far eseguire a mdadm i controlli mensili di ridondanza sugli array MD?
+ Se il kernel lo supporta (tutte le versioni successive la 2.6.14), mdadm può effettuare delle verifiche periodiche sulla ridondanza degli array MD (RAID). Questo è un processo che potrebbe richiedere molte risorse, in base alle impostazioni locali, ma può prevenire i rari casi di perdita di dati. Notare che questa verifica è di sola-lettura tranne quando riscontra degli errori; quando ci sono errori, mdadm prova a correggerli e potrebbe accedere in scrittura al supporto.
+ .
+ Se attivo, la configurazione predefinita prevede che il controllo sia eseguito la prima domenica di ogni mese alle 01.06.
+Description-ja.UTF-8: mdadm は、毎月 MD アレイの冗長性チェックを行いますか?
+ カーネルがサポートしている場合 (バージョン 2.6.14 以降)、mdadm は定期的に MD アレイ (RAID) の冗長性チェックをすることが可能です。これは、設定に依存しますがリソースを集中的に使用する動作です。しかし、稀なデータ消失をあらかじめ避けるのに役立つでしょう。これは、エラーが見つからない限りは読み込みチェックのみであるのに注意してください。エラーが発見された場合、mdadm は修正しようとして、結果的にメディアへ書き込みを行います。
+ .
+ 有効にした場合、デフォルトでは毎月第一日曜 01:06 にチェックが実行されます。
+Description-nl.UTF-8: Maandelijkse redundantiecontrole van RAID-reeksen uitvoeren?
+ Als uw kernel dit ondersteunt (versies groter dan 2.6.14), kan mdadm periodiek de redundantie van uw RAID reeksen controleren. Afhankelijk van uw configuratie kan dit een intensief proces zijn, maar het kan wel helpen om uitzonderlijke gevallen van gegevensverlies te voorkomen. Zolang geen fouten worden gevonden, zal het proces alleen gegevens lezen; als echter wel fouten worden gevonden zal mdadm deze proberen te corrigeren.
+ .
+ Standaard wordt de controle, indien geactiveerd, uitgevoerd om 01:06 op elke eerste zondag van de maand.
+Description-pt.UTF-8: O mdadm deve correr verificações de redundância nos grupos MD mensalmente?
+ Se o kernel suportar (versões mais recentes que 2.6.14) o mdadm pode verificar periodicamente a redundância dos grupos MD (RAIDs). Isto pode ser um processo que requer muitos recursos, dependendo da sua configuração, mas pode prevenir casos raros de perda de dados. Notar que esta verificação é feita em modo de leitura a não ser que sejam encontrados erros; se forem encontrados erros, o mdadm tenta corrigi-los, o que pode resultar em acessosde escrita aos discos.
+ .
+ O pré-definido, se ligado, é os testes serem executados no primeiro Domingo de cada mês às 01:06.
+Description-ru.UTF-8: Должен ли mdadm запускать ежемесячную проверку избыточности на MD-массивах?
+ Если это поддерживается ядром (>> 2.6.14), mdadm может периодически проверять избыточность MD массивов (RAID-ов). Это может стать ресурсоёмким процессом в зависимости от настройки, но он может помочь предотвратить редкие случаи потери данных. Заметим, что пока не обнаружено ошибок, работа ведётся в режиме только чтение; если обнаруживается ошибка, mdadm попытается исправить её, что может потребовать прав записи на носитель.
+ .
+ Если ответить утвердительно, то по умолчанию проверка выполняется в первое воскресенье каждого месяца в 01:06.
+Description-sk.UTF-8: Má mdadm spúšťať mesačnú kontrolu redundancie polí MD?
+ Ak to jadro podporuje (verzie novšie ako 2.6.14), mdadm môže periodicky kontrolovať redundanciu polí MD (RAIDov). Tento proces môže byť (v závislosti od lokálneho nastavenia) náročný na zdroje systému, ale môže pomôcť pri predchádzaní vzácnym prípadom straty dát. Pamätajte, že, pokiaľ nie sú nájdené chyby, je to kontrola read-only, až keď sú nájdené chyby, pokúsi sa ich mdadm opraviť, čo môže mať za následok zápis na médium.
+ .
+ Predvolene je vypnuté, ak túto možnosť zapnete, bude kontrola vykonávaná každú prvú nedeľu mesiaca o 01:06.
+Description-sv.UTF-8: Ska mdadm köra månatliga redundanskontroller av MD-kedjorna?
+ Om din kärna har stöd för det (versioner senare än 2.6.14), kan mdadm periodvis kontrollera redundansen för dina MD-kedjor (RAID). Det här kan vara en resurskrävande process, beroende på din konfiguration, men den kan hjälpa till att förhindra ovanliga fall av dataförluster. Observera att det är en skrivskyddad kontroll såvida inte fel påträffas; om fel hittas kommer mdadm försöka att rätta till dem, vilket kan leda till skrivåtkomst till mediet.
+ .
+ Standardvärdet, om påslagen, är att kontrollera på den första söndagen i varje månad klockan 01.06.
+Description-vi.UTF-8: mdadm có nên chạy việc kiểm tra thừa hàng tháng trên những mảng MD không?
+ Nếu hạt nhân có phải hỗ trợ (các phiên bản sau 2.6.14) thì mdadm có thể kiểm tra theo chu kỳ tình thừa của các mảng MD (RAID). Tiến trình này có thể chiếm nhiều tài nguyên hệ thống, phụ thuộc vào thiết lập cục bộ, nhưng nó có thể giúp ngăn cản trường hợp mất dữ liệu (ít có). Ghi chú rằng việc kiểm tra này là chỉ đọc: gặp lỗi thì mdadm sẽ thử sửa chữa, mà có thể gây ra truy cập ghi vào vật chứa.
+ .
+ Giá trị mặc định, nếu được bật, là chạy những việc kiểm tra vào ngày hôm Chủ Nhật thứ nhất của mỗi tháng, vào lúc 01:06 giờ (giờ ti).
+
+Template: mdadm/start_daemon
+Type: boolean
+Default: true
+Description: Do you want to start the MD monitoring daemon?
+ The MD (RAID) monitor daemon sends email notifications in response to
+ important MD events (such as a disk failure).
+ .
+ Enabling this option is recommended.
+Description-ca.UTF-8: Desitjau arrencar el dimoni monitor MD?
+ El dimoni monitor de MD (RAID) envia notificacions per correu electrònic quan es produeixen esdeveniments importants en els dispositius MD (com un error de disc).
+ .
+ Es recomana l'activació d'aquesta opció.
+Description-cs.UTF-8: Chcete spustit daemon pro monitorování MD?
+ Daemon pro monitorování MD (RAIDu) zasílá emailová upozornění na významné MD události, jako je selhání disku.
+ .
+ Povolení této možnosti je doporučeno.
+Description-da.UTF-8: Ønsker du at starte MD-overvågningsdæmonen?
+ MD-overvågningsdæmonem (RAID) sender e-post-påmindelser udløst af vigtige MD-hændelser (såsom en diskfejl).
+ .
+ Aktivering af denne indstilling anbefales.
+Description-de.UTF-8: Möchten Sie den RAID-Überwachungsdämon starten?
+ Der MD- (RAID-)Überwachungsdämon verschickt Benachrichtigungen als Reaktion auf wichtige RAID-Ereignisse (wie zum Beispiel Festplattenfehler).
+ .
+ Das Aktivieren dieser Option ist empfohlen.
+Description-es.UTF-8: ¿Desea arrancar el demonio de monitorización MD?
+ El demonio de monitorización MD (RAID) envía notificaciones por correo electrónico cuando se producen eventos importantes en los dispositivos MD (como pueda ser el caso de un fallo de un disco).
+ .
+ Es opcional habilitar esta opción.
+Description-eu.UTF-8: MD monitorizazio deabrua abiarazi nahi al duzu?
+ MD (RAID) monitore deabruak eposta bidezko berri-emateak bidaltzen ditu gertaera garrantzitsuetan (disko erroreen antzerakoetan).
+ .
+ Aukera hau gaitzea gomendagarria da.
+Description-fi.UTF-8: Haluatko käynnistää MD-seurannan?
+ MD-pakkoja (RAIDeja) seuraava taustaohjelma lähettää tietoja sähköpostiin tärkeiden MD-tapahtumien (kuten levyrikon) sattuessa.
+ .
+ Tämän valitseminen on suositeltavaa.
+Description-fr.UTF-8: Faut-il démarrer le démon de surveillance MD ?
+ Le démon de surveillance MD envoie des notifications par courriel lors d'importants événements MD (comme une panne de disque dur).
+ .
+ Il est recommandé d'activer cette option.
+Description-gl.UTF-8: ¿Quere iniciar o servizo de monitorización de MD?
+ O servizo de monitorización de MD (RAID) envía avisos por email en resposta a eventos importantes de MD (coma fallos nos discos).
+ .
+ Recoméndase activar esta opción.
+Description-it.UTF-8: Avviare il demone di monitoraggio MD?
+ Il demone di monitoraggio MD (RAID) invia delle notifiche via email quando si verificano eventi importanti (come la rottura di un disco).
+ .
+ Si raccomanda l'attivazione di questa funzione.
+Description-ja.UTF-8: MD 監視デーモンを起動しますか?
+ MD (RAID) 監視デーモンは、重大な MD 関連のイベント (ディスク障害など) に対してメールで通知を送ります。
+ .
+ この機能を有効にするのをお勧めします。
+Description-nl.UTF-8: Wilt u de achtergronddienst voor de RAID-monitor starten?
+ De achtergronddienst voor de RAID-monitor stuurt per e-mail berichten bij belangrijke gebeurtenissen die betrekking hebben op RAID (zoals een falende harde schijf).
+ .
+ Gebruik van deze optie wordt aanbevolen.
+Description-pt.UTF-8: Quer iniciar o deamon de monitorização do MD?
+ O daemon monitor MD(RAID) envia notificações por email no caso de eventos importantes (tais como falha de um disco). Provavelmente quer activar esta opção.
+ .
+ É recomendado activar esta opção.
+Description-ru.UTF-8: Запускать демон-монитор MD?
+ Демон-монитор MD (RAID) посылает почтовые уведомления в случае возникновения важных событий с MD (таких как отказ диска).
+ .
+ Рекомендуется ответить утвердительно.
+Description-sk.UTF-8: Chcete spustiť démona monitorovania MD?
+ Monitorovací démon MD (RAID) posiela upozornenia emailom, ako reakcie na dôležité udalosti MD (napr. zlyhanie disku).
+ .
+ Povolenie tejto možnosti je odporúčané.
+Description-sv.UTF-8: Vill du starta MD-övervakningsdemonen?
+ MD-övervakningsdemonen (RAID) skickar e-postnotifieringar för viktiga MD-händelser (såsom ett diskfel).
+ .
+ Att aktivera denna funktion rekommenderas.
+Description-vi.UTF-8: Bạn có muốn khởi chạy trình nền theo dõi MD không?
+ Trình nền theo dõi MD (RAID) gửi thư thông báo hưởng ứng dữ kiện MD quan trọng (v.d. đĩa bị hỏng).
+ .
+ Khuyên bạn hiệu lực tùy chọn này.
+
+Template: mdadm/mail_to
+Type: string
+Default: root
+Description: Recipient for email notifications:
+ Please enter the email address of the user who should get the email
+ notifications for important MD events.
+Description-ca.UTF-8: Destinatari de les notificacions de correu electrònic:
+ Introduïu l'adreça de correu electrònic de l'usuari que ha de rebre les notificacions de correu electrònic per a esdeveniments MD rellevants.
+Description-cs.UTF-8: Příjemce emailových upozornění:
+ Zadejte prosím emailovou adresu uživatele, který má dostávat emailová upozornění při výskytu významných MD událostí.
+Description-da.UTF-8: Modtager af e-post-påmindelser:
+ Indtast venligst e-post-adressen på brugeren, som skal modtage e-post-påmindelser for vigtige MD-hændelser.
+Description-de.UTF-8: Empfänger der E-Mail-Benachrichtungen:
+ Geben Sie bitte die E-Mail-Adresse des Benutzers an, der die E-Mail-Benachrichtigung für wichtigen MD-Ereignisse erhalten soll.
+Description-es.UTF-8: Destinatario de las notificaciones por correo:
+ Introduzca la dirección de correo electrónico del usuario que debería recibir las notificaciones por correo de eventos relevantes en los dispositivos MD.
+Description-eu.UTF-8: Eposta berri-emateen hartzailea:
+ Mesedez idatzi MD gertaera garrantzitsuen berri emate mezuak jaso behar dituen erabiltzailearen eposta helbidea.
+Description-fi.UTF-8: Sähköpostiviestien vastaanottaja:
+ Anna sähköpostiosoite, johon sähköpostitiedotteet tärkeistä MD-tapahtumista lähetetään.
+Description-fr.UTF-8: Destinataire des notifications par courriel :
+ Veuillez indiquer l'adresse électronique de l'utilisateur qui doit recevoir les notifications lors d'importants événements MD.
+Description-gl.UTF-8: Destinatario para os avisos por email:
+ Introduza o enderezo de email do usuario que debe recibir os avisos por email de eventos importantes de MD.
+Description-it.UTF-8: Destinatario delle email di notifica:
+ Inserire l'indirizzo email dell'utente che deve ricevere le notifiche di eventi importanti legati al MD.
+Description-ja.UTF-8: メール通知の宛先:
+ MD 関連の重大なイベントが発生した際、メールでの通知を受け取る必要があるユーザのメールアドレスを入力してください。
+Description-nl.UTF-8: Adres voor e-mailberichten:
+ Wat is het e-mailadres van de gebruiker die de e-mailberichten voor belangrijke gebeurtenissen met betrekking tot RAID dient te ontvangen.
+Description-pt.UTF-8: Destinatário de email para notificações:
+ Por favor, introduza o endereço de email do utilizador que deve receber as notificações de eventos MD importantes.
+Description-ru.UTF-8: Получатель уведомительных писем:
+ Введите адрес электронной почты пользователя, который будет получать почтовые уведомления о важных изменениях в состоянии MD.
+Description-sk.UTF-8: Príjemca emailových upozornení:
+ Prosím, zadajte emailovú adresu používateľa, ktorý má dostávať emailové upozornenia na dôležité udalosti MD.
+Description-sv.UTF-8: Mottagare av e-postnotifieringar:
+ Ange e-postadressen till den användare som ska ta emot e-postnotifieringar för dessa viktiga MD-händelser.
+Description-vi.UTF-8: Người nhận thư thông báo :
+ Hãy nhập địa chỉ thư của người dùng nên nhận thư thông báo về dữ kiện MD quan trọng.

@@ -1,0 +1,10 @@
+# Aliases for symbols, used by symbol_request().
+alias symbol:i2c_mux_alloc i2c_mux
+alias symbol:crypto_dh_encode_key dh_generic
+alias symbol:crc_itu_t_table crc_itu_t
+alias symbol:crypto_dh_key_len dh_generic
+alias symbol:i2c_mux_del_adapters i2c_mux
+alias symbol:i2c_root_adapter i2c_mux
+alias symbol:crypto_dh_decode_key dh_generic
+alias symbol:i2c_mux_add_adapter i2c_mux
+alias symbol:crc_itu_t crc_itu_t

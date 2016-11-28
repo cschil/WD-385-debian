@@ -1,0 +1,8 @@
+kernel/fs/udf/udf.ko: kernel/lib/crc-itu-t.ko
+kernel/crypto/echainiv.ko:
+kernel/crypto/dh_generic.ko:
+kernel/crypto/hmac.ko:
+kernel/crypto/drbg.ko:
+kernel/crypto/jitterentropy_rng.ko:
+kernel/drivers/i2c/i2c-mux.ko:
+kernel/lib/crc-itu-t.ko:

@@ -1,0 +1,51 @@
+
+Start-Date: 2016-11-06  17:20:16
+Commandline: /usr/bin/apt-get install locales dialog
+Install: dialog:armhf (1.2-20140911-1), locales:armhf (2.19-18+deb8u6)
+End-Date: 2016-11-06  17:20:33
+
+Start-Date: 2016-11-06  17:25:55
+Commandline: /usr/bin/apt-get install openssh-server ntpdate nano ethtool mtd-utils
+Install: libgssapi-krb5-2:armhf (1.12.1+dfsg-19+deb8u2, automatic), ncurses-term:armhf (5.9+20140913-1, automatic), libkrb5-3:armhf (1.12.1+dfsg-19+deb8u2, automatic), krb5-locales:armhf (1.12.1+dfsg-19+deb8u2, automatic), libk5crypto3:armhf (1.12.1+dfsg-19+deb8u2, automatic), libkeyutils1:armhf (1.5.9-5+b1, automatic), libx11-data:armhf (1.6.2-3, automatic), openssh-sftp-server:armhf (6.7p1-5+deb8u3, automatic), lockfile-progs:armhf (0.1.17, automatic), ntpdate:armhf (4.2.6.p5+dfsg-7+deb8u2), libxmuu1:armhf (1.1.2-1, automatic), openssh-server:armhf (6.7p1-5+deb8u3), libbsd0:armhf (0.7.0-2, automatic), liblzo2-2:armhf (2.08-1.2, automatic), libxdmcp6:armhf (1.1.1-1+b1, automatic), mtd-utils:armhf (1.5.1-1), libkrb5support0:armhf (1.12.1+dfsg-19+deb8u2, automatic), libwrap0:armhf (7.6.q-25, automatic), ethtool:armhf (3.16-1), libx11-6:armhf (1.6.2-3, automatic), libedit2:armhf (3.1-20140620-2, automatic), openssh-client:armhf (6.7p1-5+deb8u3, automatic), liblockfile-bin:armhf (1.09-6, automatic), libxext6:armhf (1.3.3-1, automatic), libxau6:armhf (1.0.8-1, automatic), liblockfile1:armhf (1.09-6, automatic), libxcb1:armhf (1.10-3+b1, automatic), xauth:armhf (1.0.9-1, automatic), tcpd:armhf (7.6.q-25, automatic)
+End-Date: 2016-11-06  17:26:24
+
+Start-Date: 2016-11-06  17:36:58
+Commandline: /usr/bin/apt-get install busybox
+Install: busybox:armhf (1.22.0-9+deb8u1)
+End-Date: 2016-11-06  17:36:59
+
+Start-Date: 2016-11-06  18:11:07
+Commandline: /usr/bin/apt-get install git
+Install: perl-modules:armhf (5.20.2-3+deb8u6, automatic), libsasl2-2:armhf (2.1.26.dfsg1-13+deb8u1, automatic), libpod-readme-perl:armhf (0.11-1, automatic), libtext-template-perl:armhf (1.46-1, automatic), perl:armhf (5.20.2-3+deb8u6, automatic), libmro-compat-perl:armhf (0.12-1, automatic), libmodule-signature-perl:armhf (0.73-1+deb8u2, automatic), libterm-ui-perl:armhf (0.42-1, automatic), liblog-message-simple-perl:armhf (0.10-2, automatic), liberror-perl:armhf (0.17-1.1, automatic), libpod-latex-perl:armhf (0.61-1, automatic), libsasl2-modules-db:armhf (2.1.26.dfsg1-13+deb8u1, automatic), libssh2-1:armhf (1.4.3-4.1+deb8u1, automatic), rename:armhf (0.20-3, automatic), libsub-exporter-perl:armhf (0.986-1, automatic), libtext-soundex-perl:armhf (3.4-1+b2, automatic), libclass-c3-perl:armhf (0.26-1, automatic), libdata-optlist-perl:armhf (0.109-1, automatic), libclass-c3-xs-perl:armhf (0.13-2+b1, automatic), libfcgi-perl:armhf (0.77-1+b1, automatic), libregexp-common-perl:armhf (2013031301-1, automatic), patch:armhf (2.7.5-1, automatic), libparams-util-perl:armhf (1.07-2+b1, automatic), libpackage-constants-perl:armhf (0.04-1, automatic), libldap-2.4-2:armhf (2.4.40+dfsg-1+deb8u2, automatic), openssl:armhf (1.0.1t-1+deb8u5, automatic), libsasl2-modules:armhf (2.1.26.dfsg1-13+deb8u1, automatic), libdata-section-perl:armhf (0.200006-1, automatic), libcurl3-gnutls:armhf (7.38.0-4+deb8u5, automatic), libexpat1:armhf (2.1.0-6+deb8u3, automatic), libmodule-build-perl:armhf (0.421000-2+deb8u1, automatic), libcpan-meta-perl:armhf (2.142690-1, automatic), liblog-message-perl:armhf (0.8-1, automatic), git:armhf (2.1.4-2.1+deb8u2), libcgi-pm-perl:armhf (4.09-1, automatic), libarchive-extract-perl:armhf (0.72-1, automatic), libsoftware-license-perl:armhf (0.103010-3, automatic), libsub-install-perl:armhf (0.928-1, automatic), libalgorithm-c3-perl:armhf (0.09-1, automatic), libmodule-pluggable-perl:armhf (5.1-1, automatic), ca-certificates:armhf (20141019+deb8u1, automatic), rsync:armhf (3.1.1-3, automatic), libcgi-fast-perl:armhf (2.04-1, automatic), git-man:armhf (2.1.4-2.1+deb8u2, automatic), librtmp1:armhf (2.4+20150115.gita107cef-1, automatic)
+End-Date: 2016-11-06  18:12:24
+
+Start-Date: 2016-11-24  07:10:04
+Commandline: /usr/bin/apt-get upgrade
+Upgrade: vim-tiny:armhf (7.4.488-7, 7.4.488-7+deb8u1), tzdata:armhf (2016f-0+deb8u1, 2016i-0+deb8u1), libirs-export91:armhf (9.9.5.dfsg-9+deb8u6, 9.9.5.dfsg-9+deb8u8), libnettle4:armhf (2.7.1-5+deb8u1, 2.7.1-5+deb8u2), libpam-modules-bin:armhf (1.1.8-3.1+deb8u1+b1, 1.1.8-3.1+deb8u2), libpam-modules:armhf (1.1.8-3.1+deb8u1+b1, 1.1.8-3.1+deb8u2), libdns-export100:armhf (9.9.5.dfsg-9+deb8u6, 9.9.5.dfsg-9+deb8u8), sed:armhf (4.2.2-4+b1, 4.2.2-4+deb8u1), libisc-export95:armhf (9.9.5.dfsg-9+deb8u6, 9.9.5.dfsg-9+deb8u8), libhogweed2:armhf (2.7.1-5+deb8u1, 2.7.1-5+deb8u2), bash:armhf (4.3-11+b1, 4.3-11+deb8u1), libgnutls-deb0-28:armhf (3.3.8-6+deb8u3, 3.3.8-6+deb8u4), libpam0g:armhf (1.1.8-3.1+deb8u1+b1, 1.1.8-3.1+deb8u2), vim-common:armhf (7.4.488-7, 7.4.488-7+deb8u1), libisccfg-export90:armhf (9.9.5.dfsg-9+deb8u6, 9.9.5.dfsg-9+deb8u8), libgnutls-openssl27:armhf (3.3.8-6+deb8u3, 3.3.8-6+deb8u4), libpam-runtime:armhf (1.1.8-3.1+deb8u1, 1.1.8-3.1+deb8u2), libssl1.0.0:armhf (1.0.1t-1+deb8u3, 1.0.1t-1+deb8u5), tar:armhf (1.27.1-2+b1, 1.27.1-2+deb8u1)
+End-Date: 2016-11-24  07:10:34
+
+Start-Date: 2016-11-24  07:12:49
+Commandline: /usr/bin/apt-get install mdadm bash-completion
+Install: bash-completion:armhf (2.1-4), exim4-base:armhf (4.84.2-2+deb8u1, automatic), mdadm:armhf (3.3.2-5+deb8u1), exim4-daemon-light:armhf (4.84.2-2+deb8u1, automatic), psmisc:armhf (22.21-2, automatic), exim4-config:armhf (4.84.2-2+deb8u1, automatic), bsd-mailx:armhf (8.1.2-0.20141216cvs-2, automatic)
+End-Date: 2016-11-24  07:13:29
+
+Start-Date: 2016-11-26  15:08:10
+Commandline: /usr/bin/apt-get install btrfs-tools
+Install: btrfs-tools:armhf (3.17-1.1)
+End-Date: 2016-11-26  15:08:11
+
+Start-Date: 2016-11-26  15:59:01
+Commandline: /usr/bin/apt-get install dropbear
+Install: dropbear:armhf (2014.65-1)
+Error: Sub-process /usr/bin/dpkg returned an error code (1)
+End-Date: 2016-11-26  15:59:02
+
+Start-Date: 2016-11-26  16:02:25
+Commandline: /usr/bin/apt-get remove dropbear
+Remove: dropbear:armhf (2014.65-1)
+End-Date: 2016-11-26  16:02:28
+
+Start-Date: 2016-11-26  16:02:36
+Commandline: /usr/bin/apt-get install dropbear
+Install: dropbear:armhf (2014.65-1)
+End-Date: 2016-11-26  16:02:39

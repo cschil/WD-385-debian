@@ -1,0 +1,31 @@
+Package: findutils
+Description-md5: ad1a783819241ffdf3ff5f37a676af59
+Description-de_DE: Werkzeuge zum Auffinden von Dateien - find, xargs
+ GNU findutils beinhaltet Werkzeuge, um Dateien nach gegebenen Kriterien
+ zu finden und mit diesen verschiedene Aktionen auszuführen.
+ .
+ Das Paket enthält 'find' und 'xargs'; 'locate' wurde in ein seperates
+ Paket ausgelagert.
+
+Package: xz-utils
+Description-md5: ea97a558c8575aebbed2c11cbd20e0f2
+Description-de_DE: XZ-format Komprimierungs-Hilfsprogramme
+ XZ ist der Nachfolger des Lempel-Ziv/Markov-chain-Komprimierungs-
+ formats, das speicherintensive, aber starke Kompression (oft besser
+ als bzip2) und schnelle Dekomprimierung bietet.
+ .
+ Dieses Paket stellt die Kommandozeilenwerkzeuge zur Arbeit mit dem XZ-
+ Format bereit, u.A. xz, unxz, xzcat, xzgrep usw.. Diese Werkzeuge können
+ auch mit dem alten LZMA-Format umgehen und emulieren das Verhalten der
+ ursprünglichen LZMA-Tools, wenn sie über einen entsprechenden Symlink
+ aufgerufen werden.
+ .
+ Das XZ-Format ist dem alten LZMA-Format sehr ähnlich, beinhaltet aber
+ einige Verbesserungen:
+ .
+  * 'file'-Magie, um XZ-Dateien zu erkennen
+  * crc64-Integritätsprüfung
+  * begrenzte Unterstützung für nicht-lineare Zugriffe
+  * verbesserter Multithreading-Support (nicht verwendet in xz-utils)
+  * Unterstützung für Flushing des Ecnoders
+
